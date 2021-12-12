@@ -16,15 +16,12 @@ public class CoatOfArmsActivity extends AppCompatActivity {
             finish();
             return;
         }
-
+        City city = (City) getIntent().getExtras().getSerializable(CoatOfArmsFragment.ARG_INDEX);
         if(savedInstanceState == null) {
             getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.coat_of_arms_fragment_container,
-                            CoatOfArmsFragment.newInstance(
-                                    getIntent().getExtras().getInt(CoatOfArmsFragment.ARG_INDEX)
-                            ))
-                    .commit();
+                .beginTransaction()
+                .replace(R.id.coat_of_arms_fragment_container, CoatOfArmsFragment.newInstance(city))
+                .commit();
         }
     }
 }
