@@ -16,7 +16,7 @@ public class CoatOfArmsActivity extends AppCompatActivity {
             finish();
             return;
         }
-        City city = (City) getIntent().getExtras().getSerializable(CoatOfArmsFragment.ARG_INDEX);
+        City city = (City) getIntent().getExtras().getParcelable(CoatOfArmsFragment.ARG_INDEX);
         if(savedInstanceState == null) {
             getSupportFragmentManager()
                 .beginTransaction()

@@ -31,7 +31,7 @@ public class CoatOfArmsFragment extends Fragment {
         Bundle arguments = getArguments();
 
         if(arguments != null) {
-            City city = (City) arguments.getSerializable(ARG_INDEX);
+            City city = (City) arguments.getParcelable(ARG_INDEX);
             ImageView imageCoatOfArms = view.findViewById(R.id.coat_of_arms_image_view);
             @SuppressLint("Recycle") TypedArray images =
                     getResources().obtainTypedArray(R.array.coat_of_arms_img);
@@ -45,7 +45,7 @@ public class CoatOfArmsFragment extends Fragment {
     public static CoatOfArmsFragment newInstance(City city) {
         CoatOfArmsFragment fragment = new CoatOfArmsFragment();
         Bundle args = new Bundle();
-        args.putSerializable(ARG_INDEX, city);
+        args.putParcelable(ARG_INDEX, city);
         fragment.setArguments(args);
         return fragment;
     }
